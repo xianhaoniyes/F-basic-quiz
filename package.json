@@ -42,5 +42,9 @@
   "lint-staged": {
     "*.js": "eslint \"src/\" --cache --fix --format table",
     "*.{js,css,scss,html}": "prettier --write"
+  },
+  "dependencies": {
+    "axios": "^0.19.2",
+    "react": "^16.13.1"
   }
 }
