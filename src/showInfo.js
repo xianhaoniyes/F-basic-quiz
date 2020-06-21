@@ -2,13 +2,13 @@ import $ from "jquery";
 import BasicInfoApi from "./basicInfo";
 
 const ShowInfoApi = {
-  loadImage: async () => {
-    const userData = await BasicInfoApi.getUserInfo();
+  loadImage: async (url) => {
+    const userData = await BasicInfoApi.getUserInfo(url);
     $("img").attr("src", userData.avatar);
   },
 
-  showUserInfo: async () => {
-    const userData = await BasicInfoApi.getUserInfo();
+  showUserInfo: async (url) => {
+    const userData = await BasicInfoApi.getUserInfo(url);
     const name = $("<h2></h2>").text(
       `MY NAME IS ${userData.name} AND THIS MY RESUME/CV`
     );
@@ -18,8 +18,8 @@ const ShowInfoApi = {
     $(".self-introduction").append(selfIntro);
   },
 
-  showEduInfo: async () => {
-    const eduData = await BasicInfoApi.getEduInfo();
+  showEduInfo: async (url) => {
+    const eduData = await BasicInfoApi.getEduInfo(url);
     eduData.forEach((element) => {
       const year = $("<h1></h1").text(element.year).addClass("year");
       const edu = $("<section></section>").addClass("eduDetail");
