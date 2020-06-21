@@ -2,6 +2,11 @@ import $ from "jquery";
 import BasicInfoApi from "./basicInfo";
 
 const ShowInfoApi = {
+  loadImage: async () => {
+    const userData = await BasicInfoApi.getUserInfo();
+    $("img").attr("src", userData.avatar);
+  },
+
   showUserInfo: async () => {
     const userData = await BasicInfoApi.getUserInfo();
     const name = $("<h2></h2>").text(
@@ -30,5 +35,4 @@ const ShowInfoApi = {
   },
 };
 
-ShowInfoApi.showEduInfo();
-ShowInfoApi.showUserInfo();
+export default ShowInfoApi;

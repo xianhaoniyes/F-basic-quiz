@@ -11,8 +11,8 @@ body {
   background-color: $body-bg;
   line-height: $line-height-base;
   display: flex;
-
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
 }
 
 * {

@@ -1,3 +1,11 @@
+img {
+  height: $image-size;
+  width: $image-size;
+  border-radius: 50%;
+  position: absolute;
+  margin-top: 50px;
+}
+
 .userdatails {
   background-color: $white;
   width: 1000px;
